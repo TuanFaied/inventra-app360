@@ -1,18 +1,18 @@
-class Route {
+class Routes {
   final int id;
   final String route;
   final String company;
   final String status;
 
-  Route({
+  Routes({
     required this.id,
     required this.route,
     required this.company,
     required this.status,
   });
 
-  factory Route.fromJson(Map<String, dynamic> json) {
-    return Route(
+  factory Routes.fromJson(Map<String, dynamic> json) {
+    return Routes(
       id: json['id'],
       route: json['route'],
       company: json['company'],
