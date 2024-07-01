@@ -8,7 +8,7 @@ class SplashScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/inventra_logo.png', width: 242, height: 61), // Adjust path as necessary
+            Image.asset('assets/images/inventra_logo.png', width: 242, height: 61), // Adjust path as necessary
             SizedBox(height: 20),
             Text(
               "Welcome back! Sign in to your account",
