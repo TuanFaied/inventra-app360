@@ -4,11 +4,22 @@ import '../services/api_service.dart';
 import '../models/route_model.dart';
 
 class LoginController {
-  late final ApiService _apiService ;
+  late ApiService _apiService ;
+
+  LoginController() {
+    _initializeApiService();
+  }
+
+  Future<void> _initializeApiService() async {
+    _apiService = await ApiService.create();
+  }
+
 
   Future<void> login(BuildContext context, String userName, String password) async {
     try {
       final response = await _apiService.login(userName, password);
+      print(userName);
+      print(password);
       if (response['status'] == 'Success') {
         User user = User.fromJson(response['content']['userDetails']);
         List<Routes> routes = (response['content']['routes'] as List)

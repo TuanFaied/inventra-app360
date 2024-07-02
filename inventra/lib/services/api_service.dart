@@ -28,8 +28,8 @@ class ApiService {
 
   Future<Map<String, dynamic>> login(String userName, String password) async {
     try {
-      final response = await _dio.post(
-        'login',
+      final response = await _dio.put(
+        'v2/Auth/SignIn',
         data: jsonEncode({
           'userName': userName,
           'password': password,
@@ -41,8 +41,8 @@ class ApiService {
       } else {
         throw Exception('Failed to login');
       }
-    // ignore: deprecated_member_use
-    } on DioError catch (e) {
+    
+    } on DioException catch (e) {
       throw Exception('Failed to login: ${e.response?.statusCode} ${e.response?.statusMessage}');
     }
   }
