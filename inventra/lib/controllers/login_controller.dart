@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../models/user.dart';
 import '../services/api_service.dart';
 import '../models/route_model.dart';
@@ -26,7 +27,7 @@ class LoginController {
             .map((route) => Routes.fromJson(route))
             .toList();
 
-        Navigator.pushReplacementNamed(context, '/routeSelection', arguments: {'user': user, 'routes': routes});
+        context.go('/routeSelection', extra: {'user': user, 'routes': routes});
       } else {
         _showError(context, response['details']);
       }

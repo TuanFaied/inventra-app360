@@ -5,30 +5,33 @@ import 'package:inventra/components/dashboard_button.dart';
 import 'package:inventra/components/powered_by_app360.dart';
 import 'package:inventra/models/route_model.dart';
 import 'package:inventra/models/user.dart';
+import 'package:inventra/views/report_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
-  
+  final User user;
+  final Routes route;
+
+  DashboardScreen({required this.user, required this.route});
 
   @override
   Widget build(BuildContext context) {
-    final Map arguments = ModalRoute.of(context)?.settings.arguments as Map;
-    User user= arguments['user'];
-    Routes route = arguments['route'];
     return Scaffold(
       body: SafeArea(
         child: Stack(
           children: [
             // Background image
             Container(
-              
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: const AssetImage('assets/images/bg-lines.png',), // Replace with your image path
+                  image: const AssetImage(
+                    'assets/images/bg-lines.png',
+                  ), // Replace with your image path
                   fit: BoxFit.contain,
-                  
+
                   alignment: Alignment.bottomLeft,
                   colorFilter: ColorFilter.mode(
-                    Color(0xffe1e4e8).withOpacity(0.5), // Replace with your desired color and opacity
+                    Color(0xffe1e4e8).withOpacity(
+                        0.5), // Replace with your desired color and opacity
                     BlendMode.srcATop,
                   ),
                 ),
@@ -90,7 +93,12 @@ class DashboardScreen extends StatelessWidget {
                             iconPath: 'assets/icons/Group.png',
                             label: 'Reports',
                             onPressed: () {
-                              Navigator.pushNamed(context, '/report');
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ReportScreen(),
+                                ),
+                              );
                             },
                           ),
                         ],

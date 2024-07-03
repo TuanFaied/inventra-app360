@@ -44,7 +44,7 @@ class _ReportScreenState extends State<ReportScreen> {
               icon: const Icon(Icons.arrow_circle_left_outlined,
                   color: Color(0xffa4a4a4), size: 28),
               onPressed: () {
-                Navigator.pop(context);
+               Navigator.of(context).pop();
               },
             ),
             const Column(
