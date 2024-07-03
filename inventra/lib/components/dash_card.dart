@@ -40,7 +40,7 @@ class DashboardCard extends StatelessWidget {
           ),
            Positioned(
             bottom:-5,
-            left:101 ,
+            left:70 ,
             child: CustomPaint(
             size: Size(277, 108),
             painter: BackgroundPaint2(),
@@ -98,7 +98,7 @@ class DashboardCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 8),
+                
                 Text(
                   sales,
                   style: TextStyle(

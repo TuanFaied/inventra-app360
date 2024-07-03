@@ -73,6 +73,9 @@ flutter:
     - assets/icons/people.png
     - assets/icons/Investment.png
     - assets/icons/remove.png
+    - assets/images/bg-lines.png
+    - assets/images/bg-lines-up.png
+    - assets/images/bg-lines-inverted.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

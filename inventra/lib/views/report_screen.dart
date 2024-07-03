@@ -47,7 +47,7 @@ class _ReportScreenState extends State<ReportScreen> {
                 Navigator.pop(context);
               },
             ),
-            Column(
+            const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -67,17 +67,18 @@ class _ReportScreenState extends State<ReportScreen> {
                 ),
               ],
             ),
-            SizedBox(width: 80),
+            const Spacer(),
             ElevatedButton(
-              child: Text(
+              
+              child: const Text(
                 'Print',
                 style: TextStyle(color: Color(0xffa4a4a4), fontSize: 14),
               ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
-                foregroundColor: Color(0xffa4a4a4),
+                foregroundColor: const Color(0xffa4a4a4),
                 elevation: 4, // Elevation
-                shadowColor: Color(0xffa4a4a4),
+                shadowColor: const Color(0xffa4a4a4),
               ),
               onPressed: () {},
             ),
@@ -103,7 +104,7 @@ class _ReportScreenState extends State<ReportScreen> {
                         backgroundColor: Colors.white,
                         foregroundColor: isNewInvoiceSelected
                             ? kPrimaery
-                            : Color(0xffc3c3c3),
+                            : const Color(0xffc3c3c3),
                         elevation: isNewInvoiceSelected ? 4 : 0,
                         shape: BeveledRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -126,7 +127,7 @@ class _ReportScreenState extends State<ReportScreen> {
                         backgroundColor: Colors.white,
                         foregroundColor: !isNewInvoiceSelected
                             ? kPrimaery
-                            : Color(0xffc3c3c3),
+                            : const Color(0xffc3c3c3),
                         elevation: !isNewInvoiceSelected ? 4 : 0,
                         shape: BeveledRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -159,14 +160,14 @@ class _ReportScreenState extends State<ReportScreen> {
                       size: 20,
                     ),
                   ),
-                  hintStyle: TextStyle(color: Color(0xffaaaaaa)),
+                  hintStyle: const TextStyle(color: Color(0xffaaaaaa)),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(color: Color(0xffaaaaaa)),
+                    borderSide: const BorderSide(color: Color(0xffaaaaaa)),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(color: kPrimaery),
+                    borderSide: const BorderSide(color: kPrimaery),
                   ),
                 ),
                 onTap: () {
@@ -176,18 +177,20 @@ class _ReportScreenState extends State<ReportScreen> {
               const SizedBox(height: 16),
               TextField(
                 controller: _salesmanController,
+                
                 decoration: InputDecoration(
+                  
                   prefixIcon:
                       const Icon(Icons.search, color: Color(0xffaaaaaa)),
                   hintText: 'Salesman',
-                  hintStyle: TextStyle(color: Color(0xffaaaaaa)),
+                  hintStyle: const TextStyle(color: Color(0xffaaaaaa)),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(color: kPrimaery),
+                    borderSide: const BorderSide(color: kPrimaery),
                   ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                         color: Color.fromARGB(255, 231, 230, 230)),
                   ),
                 ),
@@ -198,7 +201,7 @@ class _ReportScreenState extends State<ReportScreen> {
                 decoration: BoxDecoration(
                   color: Colors.grey[200],
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.symmetric(
+                  border: const Border.symmetric(
                       horizontal:
                           BorderSide(color: Color.fromRGBO(254, 213, 213, 1))),
                 ),
@@ -222,6 +225,7 @@ class _ReportScreenState extends State<ReportScreen> {
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
+                      
                       children: [
                         Text('Balance',
                             style: TextStyle(
@@ -241,12 +245,13 @@ class _ReportScreenState extends State<ReportScreen> {
               const SizedBox(height: 6),
               ListView.builder(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: 3,
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8.0),
                     child: Card(
+                      color: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),

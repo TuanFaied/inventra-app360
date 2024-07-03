@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:inventra/components/powered_by_app360.dart';
 import 'login_screen.dart'; // Adjust the import based on the actual path
 
@@ -7,19 +8,34 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _navigateToLogin();
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+    Future.delayed(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => LoginScreen()),
+      );
+    });
+    //_navigateToLogin();
   }
 
-  _navigateToLogin() async {
-    await Future.delayed(Duration(seconds: 2), () {});
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => LoginScreen()),
-    );
+  // _navigateToLogin() async {
+  //   await Future.delayed(const Duration(seconds: 3), () {});
+  //   Navigator.pushReplacement(
+  //     context,
+  //     MaterialPageRoute(builder: (context) => LoginScreen()),
+  //   );
+  // }
+
+  @override
+  void dispose() {
+    super.dispose();
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: SystemUiOverlay.values);
   }
 
   @override
@@ -27,6 +43,36 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Stack(
         children: [
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: const AssetImage(
+                    'assets/images/bg-lines-up.png'), // Replace with your image path
+                fit: BoxFit.none,
+                alignment: Alignment.topRight,
+                colorFilter: ColorFilter.mode(
+                  const Color(0xffe1e4e8).withOpacity(
+                      0.5), // Replace with your desired color and opacity
+                  BlendMode.srcATop,
+                ),
+              ),
+            ),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: const AssetImage(
+                    'assets/images/bg-lines-inverted.png'), // Replace with your image path
+                fit: BoxFit.none,
+                alignment: Alignment.bottomLeft,
+                colorFilter: ColorFilter.mode(
+                  const Color(0xffe1e4e8).withOpacity(
+                      0.5), // Replace with your desired color and opacity
+                  BlendMode.srcATop,
+                ),
+              ),
+            ),
+          ),
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -36,10 +82,13 @@ class _SplashScreenState extends State<SplashScreen> {
                   width: 242,
                   height: 61,
                 ),
-                SizedBox(height: 20),
-                Text(
+                const SizedBox(height: 10),
+                const Text(
                   "Welcome back! Sign in to your account",
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(
+                      color: Color(0xffc4c4c4),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400),
                 ),
               ],
             ),
