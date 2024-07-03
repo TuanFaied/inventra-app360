@@ -64,6 +64,15 @@ flutter:
   assets:
     - .env
     - assets/images/inventra_logo.png
+    - assets/icons/location_arrow.png
+    - assets/icons/Fast-Delivery.png
+    - assets/icons/sales.png
+    - assets/icons/payment.png
+    - assets/icons/icon.png
+    - assets/icons/Group.png
+    - assets/icons/people.png
+    - assets/icons/Investment.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

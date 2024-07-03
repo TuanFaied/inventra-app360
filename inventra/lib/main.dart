@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:inventra/views/dashboard_screen.dart';
 import 'package:inventra/views/login_screen.dart';
+import 'package:inventra/views/report_screen.dart';
 import 'package:inventra/views/route_selection_screen.dart';
 import 'package:inventra/views/splash_screen.dart';
 
@@ -25,6 +27,8 @@ class MyApp extends StatelessWidget {
       '/': (context) => SplashScreen(),
       '/login': (context) => LoginScreen(),
       '/routeSelection': (context) => RouteSelectionScreen(),
+      '/dashboard': (context) => DashboardScreen(),
+      '/report': (context) => ReportScreen(),
       },
     );
   }
