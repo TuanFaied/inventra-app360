@@ -72,6 +72,7 @@ flutter:
     - assets/icons/Group.png
     - assets/icons/people.png
     - assets/icons/Investment.png
+    - assets/icons/remove.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
